@@ -85,7 +85,6 @@ function is_admin(): bool
 }
 
 
-/** Show a view inside the layout (admin/ views use the admin layout). */
 function render(string $view, array $data = []): void
 {
     $isAdmin = str_starts_with($view, 'admin/');
