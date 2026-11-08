@@ -1,0 +1,8 @@
+/* Admin add / edit product form (admin/product-form.html) */
+
+.product-form { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4) var(--space-6); max-width: 820px; }
+.product-form .input { background: var(--color-bg); }
+.product-form .wide { grid-column: 1 / -1; }
+.product-form footer { display: flex; gap: var(--space-3); }
+
+@media (max-width: 768px) { .product-form { grid-template-columns: 1fr; } }

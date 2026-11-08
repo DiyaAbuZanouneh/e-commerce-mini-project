@@ -1,0 +1,46 @@
+/* ==========================================================================
+   Admin shared layout (sidebar + main area) — used by every page in /admin
+   ========================================================================== */
+
+body.admin { display: grid; grid-template-columns: var(--sidebar-admin) 1fr; min-height: 100vh; }
+
+.admin-sidebar { display: flex; flex-direction: column; gap: var(--space-6); padding: var(--space-5) 0; background: var(--color-text); color: var(--color-bg); }
+.admin-sidebar .logo { padding-inline: var(--space-6); color: var(--color-bg); }
+.admin-sidebar .logo small { font-size: 11px; font-weight: 400; letter-spacing: 0.1em; color: var(--color-neutral-400); }
+.admin-sidebar nav { flex: 1; }
+.admin-sidebar nav a { display: block; padding: var(--space-3) var(--space-6); color: var(--color-bg); text-decoration: none; font-size: 14px; border-left: 3px solid transparent; }
+.admin-sidebar nav a:hover { background: var(--color-neutral-900); }
+.admin-sidebar nav a[aria-current] { background: var(--color-neutral-800); font-weight: 800; border-left-color: var(--color-accent); }
+.admin-sidebar footer { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-4) var(--space-6) 0; border-top: 2px solid var(--color-neutral-800); font-size: 13px; }
+.admin-sidebar footer a { color: var(--color-neutral-300); text-decoration: none; }
+.admin-sidebar footer a:hover { color: var(--color-accent-400); }
+
+.admin main { padding: var(--space-10) var(--space-8); min-width: 0; }
+.admin main > header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap; margin-bottom: var(--space-6); }
+.admin main > header h1 { margin: 0; font-size: var(--text-3xl); letter-spacing: -0.03em; }
+.admin h2 { font-size: var(--text-xl); }
+
+/* Panel used for forms and info blocks */
+.panel { padding: var(--space-6); background: var(--color-surface); }
+.panel h2 { margin-bottom: var(--space-4); }
+
+/* Table row actions (cell holding Edit / Delete) */
+.table td.actions { white-space: nowrap; }
+.table td.actions > * { display: inline-block; vertical-align: middle; margin: 0; }
+
+@media (max-width: 1024px) {
+  body.admin { grid-template-columns: 1fr; }
+  .admin-sidebar { flex-direction: row; flex-wrap: wrap; align-items: center; padding: var(--space-3) 0; gap: var(--space-3); }
+  .admin-sidebar nav { order: 3; flex-basis: 100%; }
+  .admin-sidebar nav ul { display: flex; overflow-x: auto; }
+  .admin-sidebar nav a { white-space: nowrap; border-left: 0; }
+  .admin-sidebar footer { flex-direction: row; margin-left: auto; padding: 0 var(--space-6); border-top: 0; }
+  .admin main { padding: var(--space-6) var(--gutter); overflow-x: auto; }
+}
+
+.admin-body > .alert { margin: var(--space-4) var(--space-8) 0; }
+.admin-sidebar footer form { margin: 0; }
+.admin-sidebar footer button { padding: 0; background: none; border: 0; color: var(--color-neutral-300); font-size: 13px; text-align: left; }
+.admin-sidebar footer button:hover { color: var(--color-accent-400); }
+.current-image img { max-width: 160px; margin-bottom: var(--space-2); }
+.current-image figcaption { font-size: var(--text-sm); color: var(--color-muted); }

@@ -1,0 +1,9 @@
+/* Products listing page (products.html) */
+
+.page-title { padding-top: var(--space-10); }
+
+.filter-bar { display: flex; align-items: flex-end; flex-wrap: wrap; gap: var(--space-4); margin: var(--space-6) 0; padding: var(--space-4); background: var(--color-surface); }
+.filter-bar .field { flex: 1; min-width: 200px; }
+.filter-bar .btn { min-height: var(--control-h-sm); }
+
+.pagination { margin-top: var(--space-6); }

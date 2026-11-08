@@ -1,0 +1,14 @@
+/* Admin dashboard (admin/dashboard.html) */
+
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); border-block: 2px solid var(--color-text); margin-bottom: var(--space-10); }
+.stats section { padding: var(--space-6) var(--space-4); }
+.stats section + section { border-left: 1px solid var(--color-divider); }
+.stats dt { font-size: var(--text-xs); letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-muted); }
+.stats dd { margin: var(--space-2) 0 0; font-size: var(--text-3xl); font-weight: 800; letter-spacing: -0.03em; }
+
+.recent .section-head { margin-bottom: var(--space-3); }
+
+@media (max-width: 768px) {
+  .stats { grid-template-columns: 1fr 1fr; }
+  .stats section:nth-child(3) { border-left: 0; }
+}

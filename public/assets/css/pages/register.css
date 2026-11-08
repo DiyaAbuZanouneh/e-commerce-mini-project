@@ -1,0 +1,6 @@
+/* Register page (register.html) */
+
+.auth { display: grid; place-items: center; padding: var(--space-16) var(--gutter); }
+.auth article { width: min(440px, 100%); }
+.auth h1 { font-size: var(--text-3xl); letter-spacing: -0.03em; margin-bottom: var(--space-6); }
+.auth form { display: flex; flex-direction: column; gap: var(--space-4); margin-bottom: var(--space-6); }

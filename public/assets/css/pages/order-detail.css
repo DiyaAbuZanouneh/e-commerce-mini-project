@@ -1,0 +1,11 @@
+/* Admin order detail (admin/order-detail.html) */
+
+.order-layout { display: grid; grid-template-columns: 1fr 360px; gap: var(--space-6); align-items: start; }
+.order-layout aside { display: flex; flex-direction: column; gap: var(--space-6); }
+.order-layout form { display: flex; flex-direction: column; gap: var(--space-4); }
+.order-layout form p { margin: 0; color: var(--color-muted); }
+.order-layout .input { background: var(--color-bg); }
+.order-layout address { line-height: 1.7; }
+.order-layout tfoot th { text-align: right; }
+
+@media (max-width: 1200px) { .order-layout { grid-template-columns: 1fr; } }

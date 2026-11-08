@@ -1,0 +1,19 @@
+/* Cart page (cart.html) */
+
+.page-title { padding-top: var(--space-10); }
+
+.cart-layout { display: grid; grid-template-columns: 1fr 360px; gap: var(--space-8); align-items: start; margin-top: var(--space-6); }
+.cart-table td { vertical-align: middle; }
+.cart-table .thumb { display: inline-flex; vertical-align: middle; margin-right: var(--space-3); }
+.cart-table td:first-child a { color: var(--color-text); text-decoration: none; font-weight: 800; vertical-align: middle; }
+.qty-form { display: flex; gap: var(--space-2); }
+.qty-form .input { width: 72px; }
+
+.summary { padding: var(--space-6); background: var(--color-surface); border-top: 4px solid var(--color-text); display: flex; flex-direction: column; gap: var(--space-4); }
+.summary h2 { font-size: var(--text-xl); margin: 0; }
+.summary dl { display: grid; grid-template-columns: 1fr auto; gap: var(--space-2); margin: 0; }
+.summary dd { margin: 0; text-align: right; }
+.summary .total { padding-top: var(--space-3); border-top: var(--rule-strong); font-size: var(--text-xl); font-weight: 800; }
+
+@media (max-width: 1024px) { .cart-layout { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { .cart-table { font-size: 13px; } }

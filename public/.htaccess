@@ -1,5 +1,6 @@
 RewriteEngine On
 
-# Let http://localhost/e-commerce-mini-project/ work without typing /public
-RewriteRule ^$ public/ [L]
-RewriteRule ^(?!public/)(.*)$ public/$1 [L]
+# Serve real files (css, js, uploads) directly; send everything else to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L]

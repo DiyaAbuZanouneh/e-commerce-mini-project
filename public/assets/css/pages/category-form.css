@@ -1,0 +1,5 @@
+/* Admin add / edit category form (admin/category-form.html) */
+
+.category-form { display: flex; flex-direction: column; gap: var(--space-4); max-width: 560px; }
+.category-form .input { background: var(--color-bg); }
+.category-form footer { display: flex; gap: var(--space-3); }

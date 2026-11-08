@@ -1,0 +1,20 @@
+/* Home page (index.html) */
+
+.hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: var(--space-12); padding: var(--space-12) var(--pad-x); }
+.hero article { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+.hero h1 { font-size: clamp(44px, 7vw, var(--text-display)); line-height: 0.95; letter-spacing: -0.04em; margin-bottom: var(--space-6); }
+.hero p { max-width: 420px; color: var(--color-muted); font-size: var(--text-lg); margin-bottom: var(--space-6); }
+.hero figure { min-height: 360px; }
+
+.categories, .featured { margin-top: var(--space-12); }
+
+.category-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--grid-gap); }
+.category-grid a { display: flex; flex-direction: column; gap: var(--space-3); padding: var(--space-4); background: var(--color-surface); color: var(--color-text); text-decoration: none; }
+.category-grid a:hover { outline: 2px solid var(--color-accent); }
+.category-grid figure { aspect-ratio: 16 / 9; background: var(--color-neutral-300); }
+
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; gap: var(--space-6); }
+  .hero figure { min-height: 220px; }
+  .category-grid { grid-template-columns: 1fr; }
+}
