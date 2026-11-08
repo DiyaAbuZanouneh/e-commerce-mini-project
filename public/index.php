@@ -1,7 +1,9 @@
 <?php
 
+// Front controller — every request goes through here.
 require __DIR__ . '/../config/init.php';
 
+// Work out the base URL so the project runs from any folder (e.g. /e-commerce-mini-project/public)
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?: '/';
 $script = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'])), '/');
 $root = preg_replace('#/public$#', '', $script);
@@ -12,6 +14,7 @@ define('BASE_URL', $base);
 $path = '/' . trim(rawurldecode(substr($uri, strlen($base))), '/');
 $method = $_SERVER['REQUEST_METHOD'];
 
+// Find the matching route
 foreach (require __DIR__ . '/../routes.php' as $route => $handler) {
     [$routeMethod, $routePath] = explode(' ', $route);
     $regex = '#^' . preg_replace('#\{\w+\}#', '([^/]+)', $routePath) . '$#';
@@ -20,6 +23,7 @@ foreach (require __DIR__ . '/../routes.php' as $route => $handler) {
         continue;
     }
 
+    // Every POST must carry a valid CSRF token
     $token = $_SESSION['csrf'] ?? '';
     if ($method === 'POST' && ($token === '' || !hash_equals($token, $_POST['_token'] ?? ''))) {
         http_response_code(403);

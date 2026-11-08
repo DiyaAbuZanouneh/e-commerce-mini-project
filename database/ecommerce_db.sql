@@ -156,10 +156,9 @@ INSERT INTO products (category_id, name, description, price, stock, image) VALUE
 (2, 'Denim Jacket',        'Classic blue denim jacket',       35.00, 20, 'uploads/products/jacket.jpg'),
 (3, 'PHP & MySQL Guide',   'Beginner to advanced web dev',    20.00, 40, 'uploads/products/php-book.jpg');
 
--- Admin account:
--- Register normally from the website (so PHP creates the password_hash),
--- then promote that account to admin:
--- UPDATE users SET role = 'admin' WHERE email = 'admin@example.com';
+-- Admin account (login: admin@example.com / admin123 — change the password after first login)
+INSERT INTO users (name, email, password, role) VALUES
+('Store Admin', 'admin@example.com', '$2y$10$JhutrnOhiDJutr3JMj5YWOMjGfBwnLc3NpNEO9AX2lM1bL7/3Umse', 'admin');
 
 -- =====================================================
 --  Useful queries (Dashboard)
