@@ -1,0 +1,5 @@
+RewriteEngine On
+
+# Let http://localhost/e-commerce-mini-project/ work without typing /public
+RewriteRule ^$ public/ [L]
+RewriteRule ^(?!public/)(.*)$ public/$1 [L]
